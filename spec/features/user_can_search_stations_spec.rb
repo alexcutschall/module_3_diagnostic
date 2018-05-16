@@ -7,7 +7,9 @@ describe 'as a user' do
         user = User.create(name: "Alex")
 
         visit '/'
-        fill_in "search", with: "80208"
+        within(:css, "nav") do
+          fill_in 'q', :with => '80208'
+        end
         click_on "Locate"
 
         expect(current_path).to eq("/search")
