@@ -1,10 +1,11 @@
 class SearchController < ApplicationController
   def index
-    conn = Faraday.new(url: "https://developer.nrel.gov/api/alt-fuel-stations/v1.json?api_key=0TWVyL6HFkXC44dCq7wHlpElOLWkpyzJnkHiekhS&format=JSON")
+    zip_code = params["q"]
+    conn = Faraday.new(url: "https://developer.nrel.gov")
 
-    raw_search = conn.get '/nearest'
+    response = conn.get "/api/alt-fuel-stations/v1/nearest.json?api_key=#{ENV['API_KEY']}&location=#{zip_code}"
 
-    response = JSON.parse(raw_search)
-    binding.pry
+    @stations = JSON.parse(response.body
+      binding.pry
   end
 end
