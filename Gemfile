@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faraday'
 gem 'figaro'
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug'

@@ -5,7 +5,6 @@ class SearchController < ApplicationController
 
     response = conn.get "/api/alt-fuel-stations/v1/nearest.json?api_key=#{ENV['API_KEY']}&location=#{zip_code}"
 
-    @stations = JSON.parse(response.body
-      binding.pry
+    @stations = JSON.parse(response.body)
   end
 end
