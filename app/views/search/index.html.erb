@@ -1,5 +1,11 @@
-<% @stations.each do |station| %>
+<% @search.each do |station| %>
   <div class="station">
-    <%= station %>
+    Name: <%= station.name %>
+    Address: <%= station.address %>
+    City: <%= station.city %>
+    State: <%= station.state %>
+    Fuel Type: <%= station.fuel_type %>
+    Distance: <%= station.distance %>
+    Access Times: <%= station.access_times %>
   </div>
 <% end %>
