@@ -18,12 +18,12 @@ describe 'as a user' do
         expect(page).to have_content("ELEC")
         expect(page).to_not have_content("BD")
         # And the stations should be limited to Electric and Propane
-        within(:css, ".station") do
-          expect(response).to include("Name")
-          expect(response).to include("Address")
-          expect(response).to include("Fuel Types")
-          expect(response).to include("Distance")
-          expect(response).to include("Access Times")
+        first(".station") do
+          expect(page).to include("Name")
+          expect(page).to include("Address")
+          expect(page).to include("Fuel Types")
+          expect(page).to include("Distance")
+          expect(page).to include("Access Times")
         end
         # And for each of the stations I should see Name, Address, Fuel Types, Distance, and Access Times
       end
