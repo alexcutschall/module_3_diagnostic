@@ -1,1 +1,5 @@
-<%= @stations %> %>
+<% @stations.each do |station| %>
+  <div class="station">
+    <%= station %>
+  </div>
+<% end %>

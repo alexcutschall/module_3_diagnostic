@@ -13,10 +13,11 @@ describe 'as a user' do
         click_on "Locate"
 
         expect(current_path).to eq("/search")
-        expect(response.body).should have_css("station", :count => 10)
+        expect(page).to have_css("station", :count => 10)
+        binding.pry
         # Then I should see a list of the 10 closest stations within 6 miles sorted by distance
-        expect(response.body).to include("Electric")
-        expect(response.body).to include("Propane")
+        expect(page).to include("Electric")
+        expect(page).to include("Propane")
         # And the stations should be limited to Electric and Propane
         within(:css, "station") do
           expect(response).to include("Name")
